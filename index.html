@@ -1,13 +1,218 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Hello World!!!👍
+export default function SteveGarciaPortfolio() {
+  return (
+    <div className="bg-slate-950 text-white min-h-screen scroll-smooth">
+      {/* Sticky Navbar */}
+      <nav className="sticky top-0 z-50 bg-slate-900/90 backdrop-blur border-b border-slate-800 shadow-lg">
+        <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+          <h1 className="text-2xl font-bold tracking-wide">Steve Garcia</h1>
 
-    </h1>
-</body>
-</html>
+          <div className="flex gap-6 text-sm md:text-base">
+            <a href="#welcome" className="hover:text-cyan-400 transition">Home</a>
+            <a href="#profile" className="hover:text-cyan-400 transition">Profile</a>
+            <a href="#projects" className="hover:text-cyan-400 transition">Projects</a>
+            <a href="#socials" className="hover:text-cyan-400 transition">Socials</a>
+          </div>
+        </div>
+      </nav>
+
+      {/* Welcome Section */}
+      <section
+        id="welcome"
+        className="min-h-screen flex flex-col justify-center items-center text-center px-6 bg-gradient-to-br from-slate-950 via-slate-900 to-cyan-950"
+      >
+        <h1 className="text-5xl md:text-7xl font-extrabold leading-tight mb-6">
+          Welcome to My Portfolio
+        </h1>
+
+        <p className="max-w-2xl text-lg md:text-2xl text-slate-300 leading-relaxed">
+          Aspiring technology professional focused on cybersecurity, networking,
+          software development, and building impactful digital solutions.
+        </p>
+
+        <a
+          href="#projects"
+          className="mt-10 bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-semibold px-8 py-4 rounded-2xl transition shadow-lg"
+        >
+          View Projects
+        </a>
+      </section>
+
+      {/* Profile Section */}
+      <section id="profile" className="max-w-6xl mx-auto px-6 py-24">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 className="text-4xl font-bold mb-6">Professional Journey</h2>
+
+            <p className="text-slate-300 leading-relaxed text-lg mb-6">
+              Steve Garcia is passionate about technology, problem-solving, and
+              continuous learning. His interests include networking,
+              cybersecurity, software development, and emerging technologies.
+            </p>
+
+            <p className="text-slate-300 leading-relaxed text-lg mb-6">
+              Through hands-on learning and technical projects, he continues to
+              strengthen his understanding of IT systems, programming, and
+              digital security while developing professional experience in the
+              tech industry.
+            </p>
+
+            <p className="text-slate-300 leading-relaxed text-lg">
+              This portfolio highlights his skills, projects, and online
+              presence as he continues building a career in technology.
+            </p>
+          </div>
+
+          <div className="bg-slate-900 border border-slate-800 rounded-3xl p-8 shadow-2xl">
+            <h3 className="text-2xl font-semibold mb-6 text-cyan-400">
+              Skills & Interests
+            </h3>
+
+            <div className="flex flex-wrap gap-4">
+              {[
+                'Cybersecurity',
+                'Networking',
+                'Python',
+                'Java',
+                'Web Development',
+                'Cloud Computing',
+                'Problem Solving',
+                'IT Support',
+              ].map((skill) => (
+                <span
+                  key={skill}
+                  className="bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 px-4 py-2 rounded-full text-sm"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Projects Section */}
+      <section
+        id="projects"
+        className="bg-slate-900 py-24 px-6 border-y border-slate-800"
+      >
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-16">
+            Featured Projects
+          </h2>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="bg-slate-950 border border-slate-800 rounded-3xl p-8 hover:-translate-y-2 transition shadow-xl">
+              <h3 className="text-2xl font-semibold mb-4 text-cyan-400">
+                Networking Lab
+              </h3>
+
+              <p className="text-slate-300 leading-relaxed mb-6">
+                A hands-on networking environment focused on routing, switching,
+                IP configuration, and troubleshooting.
+              </p>
+
+              <a
+                href="https://github.com"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-block bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-semibold px-5 py-3 rounded-xl transition"
+              >
+                View Project
+              </a>
+            </div>
+
+            <div className="bg-slate-950 border border-slate-800 rounded-3xl p-8 hover:-translate-y-2 transition shadow-xl">
+              <h3 className="text-2xl font-semibold mb-4 text-cyan-400">
+                Cybersecurity Portfolio
+              </h3>
+
+              <p className="text-slate-300 leading-relaxed mb-6">
+                A collection of cybersecurity labs, security concepts, and risk
+                management exercises demonstrating technical growth.
+              </p>
+
+              <a
+                href="https://github.com"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-block bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-semibold px-5 py-3 rounded-xl transition"
+              >
+                View Project
+              </a>
+            </div>
+
+            <div className="bg-slate-950 border border-slate-800 rounded-3xl p-8 hover:-translate-y-2 transition shadow-xl">
+              <h3 className="text-2xl font-semibold mb-4 text-cyan-400">
+                Python Automation
+              </h3>
+
+              <p className="text-slate-300 leading-relaxed mb-6">
+                Python scripts created to automate repetitive tasks, improve
+                efficiency, and practice programming fundamentals.
+              </p>
+
+              <a
+                href="https://github.com"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-block bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-semibold px-5 py-3 rounded-xl transition"
+              >
+                View Project
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Social Media Section */}
+      <section id="socials" className="max-w-6xl mx-auto px-6 py-24">
+        <h2 className="text-4xl font-bold text-center mb-16">
+          Connect With Me
+        </h2>
+
+        <div className="grid md:grid-cols-3 gap-8">
+          <a
+            href="https://github.com"
+            target="_blank"
+            rel="noreferrer"
+            className="bg-slate-900 border border-slate-800 rounded-3xl p-10 text-center hover:border-cyan-400 transition shadow-xl"
+          >
+            <h3 className="text-2xl font-semibold mb-4">GitHub</h3>
+            <p className="text-slate-400">
+              Explore coding projects and repositories.
+            </p>
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/steve-garcia-4bba163a7"
+            target="_blank"
+            rel="noreferrer"
+            className="bg-slate-900 border border-slate-800 rounded-3xl p-10 text-center hover:border-cyan-400 transition shadow-xl"
+          >
+            <h3 className="text-2xl font-semibold mb-4">LinkedIn</h3>
+            <p className="text-slate-400">
+              View professional experience and achievements.
+            </p>
+          </a>
+
+          <a
+            href="https://www.codewars.com"
+            target="_blank"
+            rel="noreferrer"
+            className="bg-slate-900 border border-slate-800 rounded-3xl p-10 text-center hover:border-cyan-400 transition shadow-xl"
+          >
+            <h3 className="text-2xl font-semibold mb-4">CodeWars</h3>
+            <p className="text-slate-400">
+              Practice coding challenges and problem solving.
+            </p>
+          </a>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="border-t border-slate-800 py-8 text-center text-slate-500 text-sm">
+        © 2026 Steve Garcia Portfolio. Built with React and Tailwind CSS.
+      </footer>
+    </div>
+  );
+}
