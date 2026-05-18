@@ -1,218 +1,444 @@
-export default function SteveGarciaPortfolio() {
-  return (
-    <div className="bg-slate-950 text-white min-h-screen scroll-smooth">
-      {/* Sticky Navbar */}
-      <nav className="sticky top-0 z-50 bg-slate-900/90 backdrop-blur border-b border-slate-800 shadow-lg">
-        <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-          <h1 className="text-2xl font-bold tracking-wide">Steve Garcia</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Steve Garcia Portfolio</title>
 
-          <div className="flex gap-6 text-sm md:text-base">
-            <a href="#welcome" className="hover:text-cyan-400 transition">Home</a>
-            <a href="#profile" className="hover:text-cyan-400 transition">Profile</a>
-            <a href="#projects" className="hover:text-cyan-400 transition">Projects</a>
-            <a href="#socials" className="hover:text-cyan-400 transition">Socials</a>
-          </div>
-        </div>
-      </nav>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
 
-      {/* Welcome Section */}
-      <section
-        id="welcome"
-        className="min-h-screen flex flex-col justify-center items-center text-center px-6 bg-gradient-to-br from-slate-950 via-slate-900 to-cyan-950"
-      >
-        <h1 className="text-5xl md:text-7xl font-extrabold leading-tight mb-6">
-          Welcome to My Portfolio
-        </h1>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #020617;
+      color: white;
+      line-height: 1.6;
+    }
 
-        <p className="max-w-2xl text-lg md:text-2xl text-slate-300 leading-relaxed">
-          Aspiring technology professional focused on cybersecurity, networking,
-          software development, and building impactful digital solutions.
-        </p>
+    /* Navbar */
+    nav {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      background-color: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #1e293b;
+      z-index: 1000;
+    }
 
-        <a
-          href="#projects"
-          className="mt-10 bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-semibold px-8 py-4 rounded-2xl transition shadow-lg"
-        >
-          View Projects
-        </a>
-      </section>
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+    }
 
-      {/* Profile Section */}
-      <section id="profile" className="max-w-6xl mx-auto px-6 py-24">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h2 className="text-4xl font-bold mb-6">Professional Journey</h2>
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
 
-            <p className="text-slate-300 leading-relaxed text-lg mb-6">
-              I am passionate about technology, problem-solving, and
-              continuous learning. His interests include networking,
-              cybersecurity, software development, and emerging technologies.
-            </p>
+    .nav-links {
+      display: flex;
+      gap: 25px;
+    }
 
-            <p className="text-slate-300 leading-relaxed text-lg mb-6">
-              Through hands-on learning and technical projects, he continues to
-              strengthen his understanding of IT systems, programming, and
-              digital security while developing professional experience in the
-              tech industry.
-            </p>
+    .nav-links a {
+      text-decoration: none;
+      color: white;
+      transition: 0.3s;
+      font-weight: 500;
+    }
 
-            <p className="text-slate-300 leading-relaxed text-lg">
-              This portfolio highlights his skills, projects, and online
-              presence as he continues building a career in technology.
-            </p>
-          </div>
+    .nav-links a:hover {
+      color: #22d3ee;
+    }
 
-          <div className="bg-slate-900 border border-slate-800 rounded-3xl p-8 shadow-2xl">
-            <h3 className="text-2xl font-semibold mb-6 text-cyan-400">
-              Skills & Interests
-            </h3>
+    /* Welcome Section */
+    #welcome {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px 20px;
+      background: linear-gradient(to bottom right, #020617, #0f172a, #083344);
+    }
 
-            <div className="flex flex-wrap gap-4">
-              {[
-                'Cybersecurity',
-                'Networking',
-                'Python',
-                'Java',
-                'Web Development',
-                'Cloud Computing',
-                'Problem Solving',
-                'IT Support',
-              ].map((skill) => (
-                <span
-                  key={skill}
-                  className="bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 px-4 py-2 rounded-full text-sm"
-                >
-                  {skill}
-                </span>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+    #welcome h1 {
+      font-size: 4rem;
+      margin-bottom: 20px;
+    }
 
-      {/* Projects Section */}
-      <section
-        id="projects"
-        className="bg-slate-900 py-24 px-6 border-y border-slate-800"
-      >
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-16">
-            Featured Projects
-          </h2>
+    #welcome p {
+      max-width: 800px;
+      font-size: 1.3rem;
+      color: #cbd5e1;
+      margin-bottom: 35px;
+    }
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-slate-950 border border-slate-800 rounded-3xl p-8 hover:-translate-y-2 transition shadow-xl">
-              <h3 className="text-2xl font-semibold mb-4 text-cyan-400">
-                Networking Lab
-              </h3>
+    .btn {
+      background-color: #22d3ee;
+      color: #020617;
+      padding: 15px 30px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
 
-              <p className="text-slate-300 leading-relaxed mb-6">
-                A hands-on networking environment focused on routing, switching,
-                IP configuration, and troubleshooting.
-              </p>
+    .btn:hover {
+      background-color: #67e8f9;
+    }
 
-              <a
-                href="https://github.com"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-block bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-semibold px-5 py-3 rounded-xl transition"
-              >
-                View Project
-              </a>
-            </div>
+    /* Sections */
+    section {
+      padding: 100px 20px;
+    }
 
-            <div className="bg-slate-950 border border-slate-800 rounded-3xl p-8 hover:-translate-y-2 transition shadow-xl">
-              <h3 className="text-2xl font-semibold mb-4 text-cyan-400">
-                Cybersecurity Portfolio
-              </h3>
+    .container {
+      max-width: 1200px;
+      margin: auto;
+    }
 
-              <p className="text-slate-300 leading-relaxed mb-6">
-                A collection of cybersecurity labs, security concepts, and risk
-                management exercises demonstrating technical growth.
-              </p>
+    h2 {
+      font-size: 2.8rem;
+      margin-bottom: 40px;
+      text-align: center;
+    }
 
-              <a
-                href="https://github.com"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-block bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-semibold px-5 py-3 rounded-xl transition"
-              >
-                View Project
-              </a>
-            </div>
+    /* Profile Section */
+    .profile-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 50px;
+      align-items: center;
+    }
 
-            <div className="bg-slate-950 border border-slate-800 rounded-3xl p-8 hover:-translate-y-2 transition shadow-xl">
-              <h3 className="text-2xl font-semibold mb-4 text-cyan-400">
-                Python Automation
-              </h3>
+    .profile-text p {
+      margin-bottom: 20px;
+      color: #cbd5e1;
+      font-size: 1.1rem;
+    }
 
-              <p className="text-slate-300 leading-relaxed mb-6">
-                Python scripts created to automate repetitive tasks, improve
-                efficiency, and practice programming fundamentals.
-              </p>
+    .skills-box {
+      background-color: #0f172a;
+      padding: 40px;
+      border-radius: 20px;
+      border: 1px solid #1e293b;
+    }
 
-              <a
-                href="https://github.com"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-block bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-semibold px-5 py-3 rounded-xl transition"
-              >
-                View Project
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+    .skills-box h3 {
+      color: #22d3ee;
+      margin-bottom: 25px;
+      font-size: 1.8rem;
+    }
 
-      {/* Social Media Section */}
-      <section id="socials" className="max-w-6xl mx-auto px-6 py-24">
-        <h2 className="text-4xl font-bold text-center mb-16">
-          Connect With Me
-        </h2>
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
 
-        <div className="grid md:grid-cols-3 gap-8">
-          <a
-            href="https://github.com"
-            target="_blank"
-            rel="noreferrer"
-            className="bg-slate-900 border border-slate-800 rounded-3xl p-10 text-center hover:border-cyan-400 transition shadow-xl"
-          >
-            <h3 className="text-2xl font-semibold mb-4">GitHub</h3>
-            <p className="text-slate-400">
-              Explore coding projects and repositories.
-            </p>
-          </a>
+    .skill {
+      background-color: rgba(34, 211, 238, 0.1);
+      border: 1px solid rgba(34, 211, 238, 0.3);
+      color: #67e8f9;
+      padding: 10px 18px;
+      border-radius: 30px;
+      font-size: 0.95rem;
+    }
 
-          <a
-            href="https://www.linkedin.com/in/steve-garcia-4bba163a7"
-            target="_blank"
-            rel="noreferrer"
-            className="bg-slate-900 border border-slate-800 rounded-3xl p-10 text-center hover:border-cyan-400 transition shadow-xl"
-          >
-            <h3 className="text-2xl font-semibold mb-4">LinkedIn</h3>
-            <p className="text-slate-400">
-              View professional experience and achievements.
-            </p>
-          </a>
+    /* Projects */
+    #projects {
+      background-color: #0f172a;
+    }
 
-          <a
-            href="https://www.codewars.com"
-            target="_blank"
-            rel="noreferrer"
-            className="bg-slate-900 border border-slate-800 rounded-3xl p-10 text-center hover:border-cyan-400 transition shadow-xl"
-          >
-            <h3 className="text-2xl font-semibold mb-4">CodeWars</h3>
-            <p className="text-slate-400">
-              Practice coding challenges and problem solving.
-            </p>
-          </a>
-        </div>
-      </section>
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
 
-      {/* Footer */}
-      <footer className="border-t border-slate-800 py-8 text-center text-slate-500 text-sm">
-        © 2026 Steve Garcia Portfolio. Built with React and Tailwind CSS.
-      </footer>
+    .card {
+      background-color: #020617;
+      border: 1px solid #1e293b;
+      border-radius: 20px;
+      padding: 30px;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+    }
+
+    .card h3 {
+      color: #22d3ee;
+      margin-bottom: 15px;
+      font-size: 1.6rem;
+    }
+
+    .card p {
+      color: #cbd5e1;
+      margin-bottom: 25px;
+    }
+
+    /* Socials */
+    .social-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    .social-card {
+      background-color: #0f172a;
+      border: 1px solid #1e293b;
+      border-radius: 20px;
+      padding: 40px;
+      text-align: center;
+      text-decoration: none;
+      color: white;
+      transition: 0.3s;
+    }
+
+    .social-card:hover {
+      border-color: #22d3ee;
+      transform: translateY(-5px);
+    }
+
+    .social-card h3 {
+      margin-bottom: 15px;
+      font-size: 1.8rem;
+    }
+
+    .social-card p {
+      color: #94a3b8;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid #1e293b;
+      text-align: center;
+      padding: 30px;
+      color: #94a3b8;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 900px) {
+      .profile-grid,
+      .project-grid,
+      .social-grid {
+        grid-template-columns: 1fr;
+      }
+
+      #welcome h1 {
+        font-size: 3rem;
+      }
+
+      .nav-container {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 600px) {
+      #welcome h1 {
+        font-size: 2.3rem;
+      }
+
+      #welcome p {
+        font-size: 1rem;
+      }
+
+      h2 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sticky Navbar -->
+  <nav>
+    <div class="nav-container">
+      <div class="logo">Steve Garcia</div>
+
+      <div class="nav-links">
+        <a href="#welcome">Home</a>
+        <a href="#profile">Profile</a>
+        <a href="#projects">Projects</a>
+        <a href="#socials">Socials</a>
+      </div>
     </div>
-  );
-}
+  </nav>
+
+  <!-- Welcome Section -->
+  <section id="welcome">
+    <h1>Welcome to My Portfolio</h1>
+
+    <p>
+      Aspiring technology professional focused on cybersecurity,
+      networking, software development, and building impactful
+      digital solutions.
+    </p>
+
+    <a href="#projects" class="btn">View Projects</a>
+  </section>
+
+  <!-- Profile Section -->
+  <section id="profile">
+    <div class="container">
+      <div class="profile-grid">
+
+        <div class="profile-text">
+          <h2>Professional Journey</h2>
+
+          <p>
+            Steve Garcia is passionate about technology,
+            problem-solving, and continuous learning. His interests
+            include networking, cybersecurity, software development,
+            and emerging technologies.
+          </p>
+
+          <p>
+            Through hands-on learning and technical projects, he
+            continues to strengthen his understanding of IT systems,
+            programming, and digital security while developing
+            professional experience in the tech industry.
+          </p>
+
+          <p>
+            This portfolio highlights his skills, projects, and
+            online presence as he continues building a career in technology.
+          </p>
+        </div>
+
+        <div class="skills-box">
+          <h3>Skills & Interests</h3>
+
+          <div class="skills">
+            <div class="skill">Cybersecurity</div>
+            <div class="skill">Networking</div>
+            <div class="skill">Python</div>
+            <div class="skill">Java</div>
+            <div class="skill">Web Development</div>
+            <div class="skill">Cloud Computing</div>
+            <div class="skill">Problem Solving</div>
+            <div class="skill">IT Support</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <div class="container">
+      <h2>Featured Projects</h2>
+
+      <div class="project-grid">
+
+        <div class="card">
+          <h3>Networking Lab</h3>
+
+          <p>
+            A hands-on networking environment focused on routing,
+            switching, IP configuration, and troubleshooting.
+          </p>
+
+          <a href="https://github.com" target="_blank" class="btn">
+            View Project
+          </a>
+        </div>
+
+        <div class="card">
+          <h3>Cybersecurity Portfolio</h3>
+
+          <p>
+            A collection of cybersecurity labs, security concepts,
+            and risk management exercises demonstrating technical growth.
+          </p>
+
+          <a href="https://github.com" target="_blank" class="btn">
+            View Project
+          </a>
+        </div>
+
+        <div class="card">
+          <h3>Python Automation</h3>
+
+          <p>
+            Python scripts created to automate repetitive tasks,
+            improve efficiency, and practice programming fundamentals.
+          </p>
+
+          <a href="https://github.com" target="_blank" class="btn">
+            View Project
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Social Media Section -->
+  <section id="socials">
+    <div class="container">
+      <h2>Connect With Me</h2>
+
+      <div class="social-grid">
+
+        <a href="https://github.com" target="_blank" class="social-card">
+          <h3>GitHub</h3>
+          <p>Explore coding projects and repositories.</p>
+        </a>
+
+        <a href="https://www.linkedin.com/in/steve-garcia-4bba163a7" target="_blank" class="social-card">
+          <h3>LinkedIn</h3>
+          <p>View professional experience and achievements.</p>
+        </a>
+
+        <a href="https://www.codewars.com" target="_blank" class="social-card">
+          <h3>CodeWars</h3>
+          <p>Practice coding challenges and problem solving.</p>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 Steve Garcia Portfolio. Built with HTML5, CSS, and JavaScript.</p>
+  </footer>
+
+  <!-- Internal JavaScript -->
+  <script>
+    // Simple navbar shadow effect on scroll
+    window.addEventListener('scroll', function () {
+      const nav = document.querySelector('nav');
+
+      if (window.scrollY > 50) {
+        nav.style.boxShadow = '0 4px 12px rgba(0,0,0,0.4)';
+      } else {
+        nav.style.boxShadow = 'none';
+      }
+    });
+  </script>
+
+</body>
+</html>
